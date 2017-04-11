@@ -1,7 +1,7 @@
 ### Live demo  
 
 
-[LIVE DEMO] (https://martynagrzelczak.github.io/wwdc/30/dest/dev/)
+[LIVE DEMO] (https://martynagrzelczak.github.io/first-page/30/dest/dev/)
 
 ---------------
 ### Source ###
