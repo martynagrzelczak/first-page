@@ -1,0 +1,251 @@
+/* ========== MAIN SECTION ========== */
+
+.project{
+	margin-top: 190px;
+	&__description{
+		background-color: #FFFFFF;
+		padding: 100px 190px;
+		@include font-family($robotoSlab, 4rem, #444444, auto, 100);
+		h2{
+			text-align: center;
+			padding-bottom: 80px;
+		}
+		p{
+		@include font-family($roboto, 2rem, #222222, 2.8rem, 300);
+		}
+		button{
+			@include font-family($roboto, 1.8rem, #222222, 2.4rem, 900);
+			display: block;
+			cursor: pointer;
+			margin: 0 auto;
+			padding: 15px 35px;
+			background-color: inherit;
+			border: 2px solid #222222;
+			margin-top: 60px;
+			text-align: center;
+			text-transform: uppercase;
+			overflow: hidden;
+			z-index: 1;
+			outline: none;
+			position: relative;
+			transition: all 0.3s;
+			&:after{
+				content: '';
+				position: absolute;
+				z-index: -2;
+				width: 0;
+				height: 103%;
+				top: 50%;
+				left: 50%;
+				background: #222222;
+				opacity: 0;
+				transform: translateX(-50%) translateY(-50%);
+				transition: all 0.3s;
+			}
+			&:hover, &:active{
+				color: #FFF;
+			}
+			&:hover:after{
+				width: 90%;
+				opacity: 1;
+			}
+			&:active:after{
+				width: 101%;
+				opacity: 1;
+			}
+		}
+	}
+	margin-bottom: 192px;
+}
+
+.portfolio{
+	@include clearfix;
+	overflow: hidden;
+	@include font-family($roboto, 2.8rem, #222222, 2.8rem, 400);
+	&__item{
+		width: 33.33%;
+		max-height: 420px;
+		float: left;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		cursor: default;
+		&--description{
+			color: #FFF;
+			position: absolute;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.7);
+			transition: all 0.5s linear;
+			opacity: 0;
+		}
+		img{
+			display: block;
+    		position: relative;
+    		transform: scale(1);
+    		transition: all 0.7s ease-in-out;
+		}
+		h3{
+			text-transform: uppercase;
+			text-align: center;
+			padding: 20px;
+			margin: 20px 60px 0 60px;
+			border-bottom: 1px solid #fff;
+			transform: scale(0);
+			transition: all 0.5s linear;
+			opacity: 0;
+
+		}
+		p{
+			position: relative;
+			font-size: 1.8rem;
+			font-style: italic;
+			padding: 30px 20px 20px;
+			transform: scale(0);
+			opacity: 0;
+			transition: all 0.5s linear;
+		}
+		a{
+			display: inline-block;
+			text-decoration: none;
+			color: #FFF;
+			font-size: 1.8rem;
+			padding: 10px 20px;
+			background-color: #000;
+			box-shadow: 0 0 1px #fff;
+			transform: scale(0);
+			opacity: 0;
+			transition: all 0.5s linear; 
+
+		}
+		&:hover{
+			img{
+				transform: scale(10);
+				opacity: 0;
+			}
+			.portfolio__item--description{
+				opacity: 1;
+			}
+			h3, p, a{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.quote{
+	@include font-family($roboto, 3.6rem, #222222, 3.6rem, 100);
+	margin: 220px auto 210px auto;
+	text-align: center;
+}
+
+.about{
+	@include clearfix;
+	background-color: #fff;
+	&__image, &__info{
+		width: 50%;
+		float: left;
+	}
+	&__image{
+		img{
+			width: 100%;
+		}
+	}
+	&__info{
+		padding-left: 120px;
+		padding-top: 110px;
+		@include font-family($roboto, 1.4rem, #290a59, 2.2rem, 300);
+		&--description{
+			margin-top: 50px;
+			width: 50%;
+			h3{
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+			p{
+				color: #6d6081;
+			}
+		}
+	}
+}
+
+.articles{
+	padding: 100px 0;
+	&__item{
+		width: 31%;
+		display: inline-block;
+		margin-right: 2.7%;
+		padding: 40px 50px;
+		background-color: #FFF;
+		text-align: center;
+		@include font-family($roboto, 1.6rem, #222222, 2.4rem, 300);
+		
+		&:last-child{
+			margin-right: 0;
+		}
+		h3{
+			@include font-family($roboto, 1.8rem, #222222, 1.8rem, 700);
+			padding-bottom: 40px;
+		}
+		p{
+			padding-bottom: 45px;
+		}
+		a{
+			color: #4eaeff;
+			font-weight: 400;
+			text-decoration: none;
+			padding: 6px;
+			position: relative;
+			z-index: 2;
+			&:after{
+				content: "";
+				position: absolute;
+				left: 50%;
+				right: 50%;
+				bottom: 0;
+				background: #4eaeff;
+				height: 4px;
+				z-index: -1;
+				transition-property: left, right;
+    			transition-duration: 0.3s;
+    			transition-timing-function: ease-out;
+			}
+		}
+		&:hover{
+			box-shadow:inset 0px 0px 0px 5px #4eaeff;
+			a{
+				&:after, &:after, &:after {
+					left: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+.contact{
+	@include clearfix;
+	background-color: #353535;
+	&__info, &__map{
+		width: 50%;
+		float: left;
+	}
+	&__info{
+		padding: 90px 210px 90px 0;
+		@include font-family($roboto, 1.6rem, #FFF, 2.4rem, 400);
+		h3{
+			font-weight: 700;
+			margin-top: 20px;
+		}
+		p{
+			&:first-child{
+				font-weight: 300;
+			}
+		}
+	}
+	&__map{
+		min-height: 464px;
+	}
+}
